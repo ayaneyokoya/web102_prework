@@ -80,8 +80,8 @@ raisedCard.innerHTML = `$${totalRaised.toLocaleString('en-US')}`;
 
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
-
-gamesCard.innerHTML = `${GAMES_JSON.length}`;
+const numGames = GAMES_JSON.length;
+gamesCard.innerHTML = `${numGames}`;
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -141,12 +141,17 @@ allBtn.addEventListener("click", showAllGames);
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
+const unfunded = GAMES_JSON.reduce((acc, game) => {
+    return game.pledged < game.goal ? acc + 1 : acc;
+}, 0);
 
 // create a string that explains the number of unfunded games using the ternary operator
-
+const sUnfunded = unfunded.length > 0 ? `There are currently ${unfunded.length} unfunded games.` : "All of our games are currently fully funded!";
 
 // create a new DOM element containing the template string and append it to the description container
+const statsElement = document.createElement('p');
+statsElement.innerHTML = sUnfunded;
+descriptionContainer.appendChild(statsElement);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
