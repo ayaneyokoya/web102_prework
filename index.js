@@ -23,18 +23,17 @@ function deleteChildElements(parent) {
 */
 
 // grab the element with the id games-container
-const gamesContainer = document.getElementById("games-container");
+const gamesContainer = document.getElementById('games-container');
 
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
-
     // loop over each item in the data
-    for (var i = 0; i < games.length; i++) {
+    for (let i = 0; i < games.length; i++) {
         const currentGame = games[i];
         // create a new div element, which will become the game card
         const gameCard = document.createElement('div');
         // add the class game-card to the list
-        gameCard.classList.add = 'game-card';
+        gameCard.classList.add('game-card');
         // set the inner HTML using a template literal to display some info 
         // about each game
         gameCard.innerHTML = `
