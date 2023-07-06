@@ -146,11 +146,14 @@ const unfunded = GAMES_JSON.reduce((acc, game) => {
 }, 0);
 
 // create a string that explains the number of unfunded games using the ternary operator
-const sUnfunded = unfunded.length > 0 ? `There are currently ${unfunded.length} unfunded games.` : "All of our games are currently fully funded!";
-
+const sUnfunded = unfunded == 1 ? '' : 's';
+const sGames = numGames == 1 ? '' : 's';
+const display = `A total of $${totalRaised.toLocaleString('en-US')} has been raised for ${numGames} game${sGames} using FinFunding! 
+                Currently, ${unfunded} game${sUnfunded} reamin${sUnfunded} unfunded.
+                Join us in helping to fund ${numGames == 1 ? 'this' : 'these'} amazing game${sGames}!`;
 // create a new DOM element containing the template string and append it to the description container
 const statsElement = document.createElement('p');
-statsElement.innerHTML = sUnfunded;
+statsElement.innerHTML = display;
 descriptionContainer.appendChild(statsElement);
 
 /************************************************************************************
