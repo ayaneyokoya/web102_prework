@@ -4,7 +4,7 @@ Submitted by: **Ayane Yokoya**
 
 **FinFunding** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
