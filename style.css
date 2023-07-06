@@ -2,25 +2,35 @@
 
 body {
     font-family: 'Cabin';
-    background-color: #758190;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #6693bb 74%);
 }
+
 
 #tentacles {
     width: 50px;
 }
 
 .header {
+    position: fixed; 
+    top: 0%;
+    width: 100%;
     display: flex;
-    background-color: lightblue;
-    padding: 1%;
+    background-color: rgb(142, 174, 211);
+    padding: 0.25%;
     align-items: center;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
 }
 
+.not-header {
+    margin-top: 9%;
+}
+
 .stats-container {
     display: flex;
+    flex-shrink: 2;
     align-items: center;
 }
 
@@ -30,7 +40,7 @@ body {
 }
 
 .stats-card {
-    background-color: #a8b0bc;
+    background-color: #b2c6e1;
     border-radius: 7px;
     padding: 1%;
     margin: 1%;
@@ -61,15 +71,41 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    transition: all .2s ease-in-out;
 }
 
 .game-card:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
+    transform: scale(0.9);
 }
 
 #button-container {
     text-align: center;
+}
+
+#unfunded-btn {
+    transition: all .2s ease-in-out;
+}
+
+#unfunded-btn:hover {
+    transform: scale(1.1);
+}
+
+#funded-btn {
+    transition: all .2s ease-in-out;
+}
+
+#funded-btn:hover {
+    transform: scale(1.1);
+}
+
+#all-btn {
+    transition: all .2s ease-in-out;
+}
+
+#all-btn:hover {
+    transform: scale(1.1);
 }
 
 button {
